@@ -64,7 +64,7 @@ class InteractiveList extends Component {
     return (
       <div className={classes.root}>
         <Grid container spacing={16}>
-          <Grid item xs={16} md={6}>
+          <Grid item xs={12} md={6}>
             <Typography variant="title" className={classes.title}>
               O projekcie
             </Typography>
