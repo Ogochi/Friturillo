@@ -1,21 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import List, {
   ListItem,
   ListItemAvatar,
-  ListItemIcon,
-  ListItemSecondaryAction,
-  ListItemText,
+  ListItemText
 } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
-import IconButton from 'material-ui/IconButton';
-import { FormGroup, FormControlLabel } from 'material-ui/Form';
-import Checkbox from 'material-ui/Checkbox';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
-import FolderIcon from 'material-ui-icons/Folder';
-import DeleteIcon from 'material-ui-icons/Delete';
 import deepOrange from 'material-ui/colors/deepOrange';
 import deepPurple from 'material-ui/colors/deepPurple';
 import green from 'material-ui/colors/green';
@@ -30,17 +23,16 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   title: {
-    // margin: '${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px',
     margin: "1em",
   },
   p: {
-  	margin: "${theme.spacing.unit}px",
+    margin: `${theme.spacing.unit}px`,
   },
   container: {
-  	margin: 'theme.spacing.unit',
+    margin: `${theme.spacing.unit}px`,
   },
   lista: {
-  	margin: '${theme.spacing.unit}px 0',
+    margin: `${theme.spacing.unit}px 0`,
   },
   orangeAvatar: {
     margin: 10,
@@ -64,16 +56,7 @@ const styles = theme => ({
   },
 });
 
-function generate(element) {
-  return [0, 1, 2].map(value =>
-    React.cloneElement(element, {
-      key: value,
-    }),
-  );
-}
-
-class InteractiveList extends React.Component {
-
+class InteractiveList extends Component {
   render() {
     const { classes } = this.props;
 
@@ -85,15 +68,15 @@ class InteractiveList extends React.Component {
               O projekcie
             </Typography>
             <p align='justify' style={{ margin: '2em' }}>
-            Friturillo jest portalem umożliwiającym wygodne wyznaczenie takiej 
-            trasy przy użyciu sieci rowerów Veturillo, aby uniknąć opłat nawet za 
-            długie wycieczki. Serwis umożliwia wyznaczenie trasy na podstawie 
-            podanych przez użytkownika, wyznaczonych na podstawie lokalizacji 
-            urządzenia lub wskazanych na mapie miejsc startowych i docelowych.
+              Friturillo jest portalem umożliwiającym wygodne wyznaczenie takiej 
+              trasy przy użyciu sieci rowerów Veturillo, aby uniknąć opłat nawet za 
+              długie wycieczki. Serwis umożliwia wyznaczenie trasy na podstawie 
+              podanych przez użytkownika, wyznaczonych na podstawie lokalizacji 
+              urządzenia lub wskazanych na mapie miejsc startowych i docelowych.
             </p>
             <p align='justify' style={{ margin: '2em' }}>
-            Projekt jest realizowany w ramach przedmiotu Inżynieria Oprogramowania,
-            prowadzonym na wydziale MIM UW w roku 2017/2018.
+              Projekt jest realizowany w ramach przedmiotu Inżynieria Oprogramowania,
+              prowadzonym na wydziale MIM UW w roku 2017/2018.
             </p>
 
           </Grid>
@@ -114,7 +97,7 @@ class InteractiveList extends React.Component {
                   </ListItem>
                   <ListItem>
                     <ListItemAvatar>
-                      <Avatar className={classes.greenAvatar}>MaO</Avatar>
+                      <Avatar className={classes.greenAvatar}>MiO</Avatar>
                     </ListItemAvatar>
                     <ListItemText
                       primary="Michał Ołtarzewski"
@@ -123,7 +106,7 @@ class InteractiveList extends React.Component {
                   </ListItem>
                   <ListItem>
                     <ListItemAvatar>
-                      <Avatar className={classes.blueAvatar}>MiO</Avatar>
+                      <Avatar className={classes.blueAvatar}>MaO</Avatar>
                     </ListItemAvatar>
                     <ListItemText
                       primary="Mateusz Olko"
@@ -132,7 +115,7 @@ class InteractiveList extends React.Component {
                   </ListItem>
                   <ListItem>
                     <ListItemAvatar>
-						<Avatar className={classes.orangeAvatar}>AZ</Avatar>
+                      <Avatar className={classes.orangeAvatar}>AZ</Avatar>
                     </ListItemAvatar>
                     <ListItemText
                       primary="Antoni Zawodny"
