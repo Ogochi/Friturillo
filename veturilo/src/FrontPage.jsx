@@ -13,6 +13,7 @@ import deepOrange from 'material-ui/colors/deepOrange';
 import deepPurple from 'material-ui/colors/deepPurple';
 import green from 'material-ui/colors/green';
 import blue from 'material-ui/colors/blue';
+import consts from './consts.js';
 
 const styles = theme => ({
   root: {
@@ -68,11 +69,7 @@ class InteractiveList extends Component {
               O projekcie
             </Typography>
             <p align='justify' style={{ margin: '2em' }}>
-              Friturillo jest portalem umożliwiającym wygodne wyznaczenie takiej 
-              trasy przy użyciu sieci rowerów Veturillo, aby uniknąć opłat nawet za 
-              długie wycieczki. Serwis umożliwia wyznaczenie trasy na podstawie 
-              podanych przez użytkownika, wyznaczonych na podstawie lokalizacji 
-              urządzenia lub wskazanych na mapie miejsc startowych i docelowych.
+              {consts.frontPageText}
             </p>
             <p align='justify' style={{ margin: '2em' }}>
               Projekt jest realizowany w ramach przedmiotu Inżynieria Oprogramowania,
