@@ -5,7 +5,6 @@ import Button from 'material-ui/Button';
 import { Link } from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import List from 'material-ui/List';
-import Copyright from 'material-ui-icons/Copyright'
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 import MenuIcon from 'material-ui-icons/Menu';
 import AppBar from 'material-ui/AppBar';
@@ -77,13 +76,14 @@ class MainLayout extends Component {
   
   render() {
     const { classes } = this.props;
-    const glowna = props => <Link to="/" {...props} />;
-    const trasa = props => <Link to="/trasa" {...props} />;
+    const trasa = props => <Link to="/" {...props} />;
+    const opis = props => <Link to="/opis" {...props} />;
     const kontakt = props => <Link to="/kontakt" {...props} />;
     const stacje = props => <Link to="/stacje" {...props} />;
     const appMargin = this.state.drawerOpen ? drawerWidth : 0;
     const displayAppBarIcons = this.state.drawerOpen && this.state.mobile ?
       {display: "none"} : {};
+    const year = new Date().getFullYear();
     
     return (
       <div style={{margin: "0 0 0 0", height: "100%", width: "100%", position: "absolute"}}>  
@@ -94,23 +94,22 @@ class MainLayout extends Component {
           <Divider />
           <div style={{width: drawerWidth, height: "100%", display: "block"}}>
             <Link to="/">
-              <img style={logoStyle} src="logo.png" alt="E l i t a r n a Trasa Logo" />
+              <img style={logoStyle} src="logo.png" alt="Friturillo Logo" />
             </Link>
             <Divider />
             <List style={{paddingTop: 0, paddingBottom: 0}}>
-              <Button style={buttonStyle} component={glowna}>Strona Główna</Button>
-              <Divider />
               <Button style={buttonStyle} component={trasa}>Wyszukaj Trase</Button>
               <Divider />
               <Button style={buttonStyle} component={stacje}>Lista Stacji</Button>
+              <Divider />
+              <Button style={buttonStyle} component={opis}>Opis Projektu</Button>
               <Divider />
               <Button style={buttonStyle} component={kontakt}>Kontakt</Button>
               <Divider />
             </List>
           </div>
           <div style={{display: "inline-block", verticalAlign: "bottom", textAlign: "center"}}>
-            <Copyright style={{width: "15px", verticalAlign: "bottom", color: "gray"}} />
-            <span style={{addingBottom: "20px", color: "gray"}}>2018 E l i t a r n a Trasa</span>
+            <span style={{addingBottom: "20px", color: "gray"}}>Copyright ©{year} Friturillo</span>
           </div>
         </Drawer>
         
